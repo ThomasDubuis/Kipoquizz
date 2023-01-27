@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Kipoquizz</string>
+
+    <string-array name="people">
+        <item>Helie</item>
+        <item>Thomas</item>
+        <item>Adam</item>
+        <item>Frederic jules jean-marc</item>
+        <item>Sami</item>
+        <item>Bryan</item>
+        <item>Ancelot</item>
+    </string-array>
+</resources>
