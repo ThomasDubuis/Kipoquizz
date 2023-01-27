@@ -18,6 +18,7 @@
         android:layout_marginBottom="10dp"/>
 
     <ScrollView
+        android:id="@+id/scrollBar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/title_id">
@@ -45,15 +46,16 @@
                     <ImageView
                         android:layout_width="150dp"
                         android:layout_height="150dp"
-                        android:contentDescription="Photo de lilou"
+                        android:contentDescription="@string/photo_de_lilou"
                         android:src="@drawable/lilou" />
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Quel âge a cette personne ?"
+                        android:hint="@string/quel_age_a_cette_personne"
                         app:errorEnabled="true">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/findAgePeople"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:drawableStart="@drawable/ic_image"
@@ -86,10 +88,11 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Quand a commencé le cours de dev mobile ?"
+                        android:text="@string/quand_a_commenc_le_cours_de_dev_mobile"
                         android:textStyle="bold"
                         android:textSize="18sp"/>
                     <DatePicker
+                        android:id="@+id/findStartDateDevMobile"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:datePickerMode="spinner"
@@ -115,13 +118,13 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Qui est le plus beau ?"
+                        android:text="@string/qui_est_le_plus_beau"
                         android:textStyle="bold"
                         android:textSize="18sp"/>
 
                     <Spinner
-                        android:id="@+id/mostBeautiful"
-                        android:contentDescription="SpinnerMostBeautiful"
+                        android:id="@+id/findMostBeautiful"
+                        android:contentDescription="@string/spinnermostbeautiful"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:minHeight="48dp"
@@ -149,10 +152,11 @@
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Quelle est la phrase préférée des Français ?"
+                        android:hint="@string/quelle_est_la_phrase_prefere_des_fran_ais"
                         app:errorEnabled="true">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/findFavoriteSentence"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:drawableStart="@drawable/ic_textsms"
@@ -187,12 +191,12 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Combien mérite ce projet?"
+                        android:text="@string/combien_merite_ce_projet"
                         android:textStyle="bold"
                         android:textSize="18sp"/>
 
                     <SeekBar
-                        android:id="@+id/scoreProject"
+                        android:id="@+id/findScoreProject"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:max="20"
@@ -202,10 +206,21 @@
             </com.google.android.material.card.MaterialCardView>
 
 
+            <Button
+                android:id="@+id/sendQuizzBtn"
+                android:radius="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="50dp"
+                android:layout_marginBottom="20dp"
+                android:text="@string/envoyer_le_questionnaire"
+                android:backgroundTint="@color/primary_green"
+                android:textColor="@color/white"
+                />
+
         </LinearLayout>
 
     </ScrollView>
-
 
 
 

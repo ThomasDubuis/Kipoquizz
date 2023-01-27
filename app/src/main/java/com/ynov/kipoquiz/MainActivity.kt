@@ -1,11 +1,17 @@
 package com.ynov.kipoquiz
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.DatePicker
 import android.widget.SeekBar
 import android.widget.Spinner
 import android.widget.Toast
+import com.google.android.material.textfield.TextInputEditText
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val spinner = findViewById<Spinner>(R.id.mostBeautiful)
+        val findMostBeautiful = findViewById<Spinner>(R.id.findMostBeautiful)
 // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter.createFromResource(
             this,
@@ -23,11 +29,11 @@ class MainActivity : AppCompatActivity() {
             // Specify the layout to use when the list of choices appears
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             // Apply the adapter to the spinner
-            spinner.adapter = adapter
+            findMostBeautiful.adapter = adapter
         }
 
-        val seekBar = findViewById<SeekBar>(R.id.scoreProject)
-        seekBar?.setOnSeekBarChangeListener(object :
+        val findScoreProject = findViewById<SeekBar>(R.id.findScoreProject)
+        findScoreProject?.setOnSeekBarChangeListener(object :
             SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seek: SeekBar,progress: Int, fromUser: Boolean) {}
 
@@ -40,5 +46,19 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+        val submitBtn = findViewById<Button>(R.id.sendQuizzBtn)
+        val findAgePeople = findViewById<TextInputEditText>(R.id.findAgePeople)
+        val findStartDateDevMobile = findViewById<DatePicker>(R.id.findStartDateDevMobile)
+        val findFavoriteSentence = findViewById<TextInputEditText>(R.id.findFavoriteSentence)
+
+        submitBtn.setOnClickListener {
+            println("Quel age : " + findAgePeople.text.toString())
+            println("Start dev mobile : " + findStartDateDevMobile.dayOfMonth
+                    + "/" + findStartDateDevMobile.month + 1
+                    + "/" + findStartDateDevMobile.year)
+            println("Le plus beau : " + findMostBeautiful.selectedItem.toString())
+            println("Phrase préférée : " + findFavoriteSentence.text.toString())
+            println("Score project : " + findScoreProject.progress)
+        }
     }
 }

@@ -1,5 +1,13 @@
 <resources>
     <string name="app_name">Kipoquizz</string>
+    <string name="photo_de_lilou">Photo de lilou</string>
+    <string name="quel_age_a_cette_personne">Quel âge a cette personne ?</string>
+    <string name="quand_a_commenc_le_cours_de_dev_mobile">Quand a commencé le cours de dev mobile ?</string>
+    <string name="qui_est_le_plus_beau">Qui est le plus beau ?</string>
+    <string name="spinnermostbeautiful">SpinnerMostBeautiful</string>
+    <string name="quelle_est_la_phrase_prefere_des_fran_ais">Quelle est la phrase préférée des Français ?</string>
+    <string name="combien_merite_ce_projet">Combien mérite ce projet?</string>
+    <string name="envoyer_le_questionnaire">Envoyer le questionnaire</string>
 
     <string-array name="people">
         <item>Helie</item>
