@@ -6,12 +6,39 @@ import android.widget.ArrayAdapter
 import android.widget.SeekBar
 import android.widget.Spinner
 import android.widget.Toast
+import android.util.Log
+import android.widget.ImageView
+import android.widget.PopupMenu
+import androidx.fragment.app.Fragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var bottomNav : BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        loadFragment(HomeFragment())
+        bottomNav = findViewById(R.id.bottomNav) as BottomNavigationView
+        bottomNav.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.home -> {
+                    loadFragment(HomeFragment())
+                    true
+                }
+                R.id.quiz -> {
+                    loadFragment(MenuFragment())
+                    true
+                }
+                R.id.settings -> {
+                    loadFragment(SettingsFragment())
+                    true
+                }
+                else -> false
+            }
+        }
 
         val spinner = findViewById<Spinner>(R.id.mostBeautiful)
 // Create an ArrayAdapter using the string array and a default spinner layout
@@ -40,5 +67,10 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+    }
+    private  fun loadFragment(fragment: Fragment){
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.container,fragment)
+        transaction.commit()
     }
 }
