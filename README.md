@@ -4,6 +4,8 @@ This is an Android project made with Kotlin language.
 
 This is a quizz application for the module "Dev mobile 2".
 
+INSERT IMAGE
+
 There are several questions with different response modes such as a "datePicker" or a "switcher".
 This project was made by 2 students of Ynov Aix-en-provence: Thomas DUBUIS and Ancelot FAYOLLE
 
